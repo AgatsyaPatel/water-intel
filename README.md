@@ -25,4 +25,4 @@ Python, Pandas, EPA Public Data
 
 ## Author
 Agatsya Patel
-Business Analytics — UMass Boston
+Data Analyst 
