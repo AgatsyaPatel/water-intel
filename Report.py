@@ -17,8 +17,12 @@ df.columns = ["Utility Name", "State", "Age (Years)",
               "Population Served", "Procurement Score"]
 
 with pd.ExcelWriter("water_intel_report.xlsx", engine="openpyxl") as write:
-    df.to_excel(write, sheet_name="All Utilities", index=False)
+    # Sheet 1: TOP 100 procurement targets
+    df.head(100).to_excel(write, sheet_name="Top 100 Utilities", index=False)
+    # Sheet 2: State summary for map
     state_summary.to_excel(write, sheet_name="State Summary", index=False)
+    # Sheet 3: All utilities for full reference
+    df.to_excel(write, sheet_name="All Utilities", index=False)
 
 print("Done! water_intel_report.xlsx created")
 
